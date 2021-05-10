@@ -1,3 +1,3 @@
 # react-notes
 
-#![screenshot](./screenshot.png)
+![screenshot](./screenshot.png)
