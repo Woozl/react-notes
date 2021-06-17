@@ -1,21 +1,7 @@
-/*eslint-disable */
-
-import { useEffect, useState } from "react"
-
 export const Content = (props) => {
-    const [content, setContent] = useState("");
-
-    useEffect(() => {
-        setContent(props.notes[props.selectedNote].content);
-    }, [props.selectedNote]);
-
-    return (<div
-        suppressContentEditableWarning={true}
-        className="text-area"
-        contentEditable="true"
-        placeholder="Write something here..."
+    return <textarea
+        placeholder="Enter note here..."
         onInput={props.onContentInput}
-    >
-        {content}
-    </div>);
+        value={props.notes[props.selectedNote].content} >
+    </textarea>
 }

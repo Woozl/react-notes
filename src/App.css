@@ -10,6 +10,16 @@ body, html, #root, .App {
   background-color: rgb(255, 207, 118);
 }
 
+.no-sel {
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Not implemented yet */
+  -o-user-select: none;
+  user-select: none;    
+}
+
 ::-webkit-scrollbar {
   width: 15px;
 }
@@ -149,16 +159,40 @@ body, html, #root, .App {
 
 .content {
   margin-left: 300px;
-  padding: 35px 50px 35px 50px;
+  /* padding: 35px 50px 35px 50px; */
 }
 
-.content h2 {
-  cursor: default;
-  color: #000000b0;
+textarea:focus, input:focus{
+  outline: none;
 }
 
-[contenteditable] {
-  outline: 0px solid transparent;
+.title-input {
+  background-color: transparent;
+  width: calc(100% - 100px);
+  font-size: 40px;
+  color: #000;
+  border: none;
+  margin: 35px 50px 0 50px;
+}
+
+.title-input::placeholder {
+  color: #00000056;
+}
+
+textarea {
+  background-color: transparent;
+  width: calc(100% - 102px);
+  height: calc(100vh - 150px);
+  margin: 10px 50px 0 50px;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #000;
+  resize: none;
+  border: none;
+}
+
+textarea::placeholder {
+  color: #00000056;
 }
 
 .title-area {
@@ -172,6 +206,7 @@ body, html, #root, .App {
 }
 
 .content h2 {
+  margin: 0 50px 0 50px;
   font-size: 20px;
 }
 

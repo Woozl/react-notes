@@ -1,14 +1,9 @@
-import { useEffect } from "react";
 import { DeleteButton } from "./DeleteButton";
 
 export const ListItem = (props) => {
-    useEffect((prev) => {
-
-    }, [props.title])
-
     return (
         <div
-            className="side-item"
+            className="side-item no-sel"
             onClick={() => props.onSelectNote(props.noteIndex)}
             style={
                 props.noteIndex === props.selectedNote ?

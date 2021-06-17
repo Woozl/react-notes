@@ -16,15 +16,6 @@ export const Notes = () => {
     const [currentNote, setCurrentNote] = useState(0);
     const [searchTerm, setSearchTerm] = useState("");
 
-    useEffect(() => {
-        console.log("Current index: ", currentNote);
-        // console.log(notes);
-    }, [currentNote]);
-
-    useEffect(() => {
-        console.log(notes)
-    }, [notes]);
-
     // add new note to notes state array
     const handleNewNote = () => {
         setNotes((prev) => ([
@@ -52,18 +43,16 @@ export const Notes = () => {
 
     const handleContentChange = (e) => {
         let notesCopy = notes.slice();
-        notesCopy[currentNote].content = e.target.innerText;
+        notesCopy[currentNote].content = e.target.value;
         notesCopy[currentNote].date = new Date().toLocaleDateString('en-US');
         setNotes(notesCopy);
-        console.log("content: ", notesCopy[currentNote].content);
     }
 
     const handleTitleChange = (e) => {
         let notesCopy = notes.slice();
-        notesCopy[currentNote].title = e.target.innerText;
+        notesCopy[currentNote].title = e.target.value;
         notesCopy[currentNote].date = new Date().toLocaleDateString('en-US');
         setNotes(notesCopy);
-        console.log("title: ", notesCopy[currentNote].title);
     }
 
     const handleSearch = ({ target: { value: v } }) => {
